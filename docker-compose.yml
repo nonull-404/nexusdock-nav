@@ -1,0 +1,27 @@
+# O1 上实际运行这套编排：/opt/homepage/docker-compose.yml
+# 更新：sudo docker compose pull && sudo docker compose up -d
+services:
+  dockerproxy:
+    # 只读代理，避免把 /var/run/docker.sock 直接交给首页容器
+    image: ghcr.io/tecnativa/docker-socket-proxy:v0.5.0
+    container_name: nav-dockerproxy
+    environment:
+      - CONTAINERS=1
+      - IMAGES=1
+      - POST=0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 127.0.0.1:2375:2375
+    restart: unless-stopped
+
+  homepage:
+    image: ghcr.io/gethomepage/homepage:v2.4.0
+    container_name: homepage
+    network_mode: host
+    environment:
+      - HOMEPAGE_ALLOWED_HOSTS=nav.970407.xyz,127.0.0.1:3013,localhost:3013
+      - PORT=3013
+    volumes:
+      - /opt/homepage/config:/app/config
+    restart: unless-stopped

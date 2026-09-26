@@ -1,0 +1,22 @@
+- 仓库:
+    - nexusdock-nav:
+        icon: github
+        href: https://github.com/nonull-404/nexusdock-nav
+        description: 本站配置与二开说明
+
+    - arena-hero-matrix:
+        icon: mdi-sword-cross
+        href: https://github.com/nonull-404/arena-hero-matrix
+
+- 控制台:
+    - Bitwarden:
+        icon: bitwarden
+        href: https://vault.bitwarden.com
+
+    - Cloudflare:
+        icon: cloudflare
+        href: https://dash.cloudflare.com
+
+    - Oracle Cloud:
+        icon: oracle
+        href: https://cloud.oracle.com

@@ -1,0 +1,4 @@
+# docker 集成：不直接挂 /var/run/docker.sock，走只读的 docker-socket-proxy
+local:
+  host: 127.0.0.1
+  port: 2375

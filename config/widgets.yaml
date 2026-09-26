@@ -1,0 +1,22 @@
+- logo:
+    icon: homepage
+
+- search:
+    provider: google
+    target: _blank
+
+- resources:
+    label: O1 主机
+    cpu: true
+    memory: true
+    disk: /
+    uptime: true
+    network: true
+    refresh: 5000
+
+- datetime:
+    text_size: xl
+    format:
+      dateStyle: medium
+      timeStyle: short
+      hour12: false

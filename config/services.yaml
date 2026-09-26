@@ -1,0 +1,130 @@
+# 服务分组。改完这个文件后：sudo docker restart homepage（或页面右下角刷新按钮）
+# icon 可用：dashboard-icons 名字 / mdi-xxx / si-xxx
+# siteMonitor 会让页面显示在线小圆点（由 homepage 容器发起请求）
+# container + server 会让页面显示容器状态，点击状态可看 CPU/内存/网络
+
+- AI 网关与模型:
+    - GPT-Load:
+        icon: openai
+        href: https://gptload.970407.xyz
+        description: 模型网关 · 上游分组与密钥
+        siteMonitor: https://gptload.970407.xyz
+        server: local
+        container: gpt-load-gpt-load-1
+
+    - ChatGPT2API:
+        icon: chatgpt
+        href: https://chatgpt.970407.xyz
+        description: ChatGPT 网页链路 · 对话与生图
+        siteMonitor: https://chatgpt.970407.xyz
+        server: local
+        container: chatgpt2api-v3
+
+    - 无限画布:
+        icon: mdi-palette-outline
+        href: https://canvas.970407.xyz
+        description: 画布前端（配 ChatGPT2API 用）
+        siteMonitor: https://canvas.970407.xyz
+        server: local
+        container: infinite-canvas
+
+    - WorkBuddy2API:
+        icon: mdi-account-hard-hat
+        href: https://workbuddy.970407.xyz
+        description: WorkBuddy 配额转 API（/v1）
+        siteMonitor: https://workbuddy.970407.xyz/healthz
+        server: local
+        container: workbuddy2api-wb2api
+
+- 智能体与记忆:
+    - Hermes Agent:
+        icon: hermes
+        href: https://hermes.970407.xyz
+        description: 小妍 · 网关与仪表盘（两层认证）
+        siteMonitor: https://hermes.970407.xyz
+
+    - Hermes 看板:
+        icon: mdi-view-column
+        href: https://hermes.970407.xyz/kanban
+        description: 任务看板（kanban）
+
+    - NexusDock 控制台:
+        icon: mdi-cube-outline
+        href: https://nexus.970407.xyz
+        description: 设备群与 AgentDock 节点
+        siteMonitor: https://nexus.970407.xyz
+        server: local
+        container: nexusdock
+
+    - OpenViking Studio:
+        icon: mdi-brain
+        href: https://openviking.970407.xyz/studio/
+        description: 长期记忆与知识库
+        siteMonitor: https://openviking.970407.xyz/health
+        server: local
+        container: openviking
+
+    - Arena Hero Matrix:
+        icon: mdi-sword-cross
+        href: https://arena.970407.xyz
+        description: 战术地图与战斗数据
+        siteMonitor: https://arena.970407.xyz
+
+- 监控与设备:
+    - Komari 监控:
+        icon: mdi-monitor-dashboard
+        href: https://komari.970407.xyz
+        description: NexusDock 设备群监控与告警
+        siteMonitor: https://komari.970407.xyz
+        server: local
+        container: komari
+
+    - 工具箱:
+        icon: mdi-toolbox-outline
+        href: https://files.970407.xyz
+        description: 文件分发与工具页（G1）
+
+- 存储与文件:
+    - OpenList:
+        icon: openlist
+        href: https://openlist.970407.xyz
+        description: 网盘聚合（WebDAV）
+        siteMonitor: https://openlist.970407.xyz
+        server: local
+        container: openlist
+
+    - R2 软件包:
+        icon: cloudflare
+        href: https://pkg.970407.xyz
+        description: Cloudflare R2 软件包分发
+
+    - R2 直链:
+        icon: cloudflare
+        href: https://dl.970407.xyz
+        description: Cloudflare R2 文件直链
+
+- 网络与代理:
+    - Xray 主节点:
+        icon: xray
+        href: https://us1.970407.xyz
+        description: us1 · 443 Reality 入口
+        siteMonitor: https://us1.970407.xyz
+
+    - Xray 备用节点:
+        icon: xray
+        href: https://us2.970407.xyz
+        description: us2 · 备用代理节点
+        siteMonitor: https://us2.970407.xyz
+
+- 内网服务（无公网入口）:
+    - Genspark2API:
+        icon: mdi-robot-outline
+        href: http://127.0.0.1:8899
+        description: 仅 O1 本机可达 · genspark 转 API
+        server: local
+        container: genspark2api-genspark2api
+
+    - Mihomo 出口代理:
+        icon: mihomo
+        href: http://127.0.0.1:7890
+        description: 仅 O1 本机可达 · 按规则分流的出网代理

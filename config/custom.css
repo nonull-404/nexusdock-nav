@@ -1,0 +1,24 @@
+/* nav: 自定义样式 —— 改动都带 nav: 前缀注释，方便跟上游 diff */
+/* nav: 卡片更圆、悬停更明显 */
+#information-widgets,
+.service-card,
+.bookmark-card {
+  border-radius: 1rem !important;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.15s ease-in-out;
+}
+
+/* nav: 分组标题前面加一道竖线，方便一眼分区 */
+h2.widget-title,
+.group-title {
+  border-left: 3px solid rgb(148 163 184 / 0.6);
+  padding-left: 0.5rem;
+}
+
+/* nav: 状态小圆点后面不留多余空白 */
+.service-status {
+  letter-spacing: 0;
+}

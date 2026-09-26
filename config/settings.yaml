@@ -1,0 +1,29 @@
+title: NexusDock 导航
+description: HSH 的自托管服务聚合
+theme: dark
+color: slate
+headerStyle: boxed
+statusStyle: dot
+useEqualHeights: true
+cardBlur: md
+hideVersion: true
+target: _blank
+layout:
+  AI 网关与模型:
+    style: row
+    columns: 3
+  智能体与记忆:
+    style: row
+    columns: 3
+  监控与设备:
+    style: row
+    columns: 3
+  存储与文件:
+    style: row
+    columns: 3
+  网络与代理:
+    style: row
+    columns: 3
+  内网服务（无公网入口）:
+    style: row
+    columns: 3
