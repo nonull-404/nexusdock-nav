@@ -26,6 +26,18 @@ docker-compose.yml  # O1 上实际运行的编排（homepage + dockerproxy），
 deploy.sh           # 一键同步本仓库配置到 O1 并重启
 ```
 
+## 部署 / 更新
+
+```bash
+./deploy.sh                # 从别的机器（ssh 别名 o1）部署
+REMOTE=local ./deploy.sh   # 已经在 O1 上时
+```
+
+它会 push 本仓库 → 在 O1 上 `git fetch/reset --hard` → 重启 homepage 容器 → 调一次
+`/api/revalidate` 重建静态页。**注意**：`reset --hard` 会丢掉 O1 上对
+`/opt/homepage/repo` 的手改，改动一律走本仓库。
+`settings.yaml`（标题/主题/布局）必须在重建静态页之后才生效，改完记得跑一次部署脚本。
+
 ## 加一个服务
 
 编辑 `config/services.yaml`，在对应分组下加一条：
