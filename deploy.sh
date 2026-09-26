@@ -10,4 +10,7 @@ ssh "$REMOTE" 'set -e
   sudo -n git -C /opt/homepage/repo fetch -q origin main
   sudo -n git -C /opt/homepage/repo reset --hard -q origin/main
   sudo -n docker restart homepage > /dev/null
-  echo "synced + restarted"'
+  sleep 5
+  # settings.yaml 改标题/主题后必须重建静态页才生效
+  curl -s -X POST http://127.0.0.1:3013/api/revalidate > /dev/null
+  echo "synced + restarted + revalidated"'

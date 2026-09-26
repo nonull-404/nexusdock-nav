@@ -34,7 +34,7 @@
         description: WorkBuddy 配额转 API（/v1）
         siteMonitor: https://workbuddy.970407.xyz/healthz
         server: local
-        container: workbuddy2api-wb2api
+        container: workbuddy2api
 
 - 智能体与记忆:
     - Hermes Agent:
@@ -122,7 +122,7 @@
         href: http://127.0.0.1:8899
         description: 仅 O1 本机可达 · genspark 转 API
         server: local
-        container: genspark2api-genspark2api
+        container: genspark2api
 
     - Mihomo 出口代理:
         icon: mihomo
