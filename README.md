@@ -22,7 +22,7 @@ config/
   docker.yaml       # docker 集成（走 docker-socket-proxy，只读）
   custom.css        # 视觉定制
   custom.js         # 行为定制
-docker-compose.yml  # O1 上实际运行的编排（homepage + dockerproxy）
+docker-compose.yml  # O1 上实际运行的编排（homepage + dockerproxy），挂载 ./config
 deploy.sh           # 一键同步本仓库配置到 O1 并重启
 ```
 
@@ -40,7 +40,7 @@ deploy.sh           # 一键同步本仓库配置到 O1 并重启
     container: example        # 容器名（docker ps 里的名字）
 ```
 
-然后 `./deploy.sh`（或直接在 O1 上 `sudo git -C /opt/homepage/config pull`）。
+然后 `./deploy.sh`（或直接在 O1 上 `sudo git -C /opt/homepage/repo pull`）。
 
 ## 二开约定
 

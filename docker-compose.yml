@@ -1,4 +1,4 @@
-# O1 上实际运行这套编排：/opt/homepage/docker-compose.yml
+# O1 上实际运行这套编排：/opt/homepage/docker-compose.yml（仓库克隆在 /opt/homepage/repo）
 # 更新：sudo docker compose pull && sudo docker compose up -d
 services:
   dockerproxy:
@@ -23,5 +23,5 @@ services:
       - HOMEPAGE_ALLOWED_HOSTS=nav.970407.xyz,127.0.0.1:3013,localhost:3013
       - PORT=3013
     volumes:
-      - /opt/homepage/config:/app/config
+      - /opt/homepage/repo/config:/app/config
     restart: unless-stopped
