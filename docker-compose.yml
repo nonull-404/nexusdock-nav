@@ -24,4 +24,5 @@ services:
       - PORT=3013
     volumes:
       - /opt/homepage/repo/config:/app/config
+      - /opt/homepage/repo/icons:/app/public/icons
     restart: unless-stopped

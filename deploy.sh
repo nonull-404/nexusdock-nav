@@ -12,8 +12,9 @@ REMOTE_CMD='
 set -e
 sudo -n git -C /opt/homepage/repo fetch -q origin main
 sudo -n git -C /opt/homepage/repo reset --hard -q origin/main
-sudo -n docker restart homepage > /dev/null
-sleep 5
+sudo -n cp /opt/homepage/repo/docker-compose.yml /opt/homepage/docker-compose.yml
+cd /opt/homepage && sudo -n docker compose up -d > /dev/null
+sleep 6
 # settings.yaml 改了标题/主题后必须重建静态页才生效（页面右下角的刷新按钮就是打这个接口）
 curl -s -X POST http://127.0.0.1:3013/api/revalidate > /dev/null
 echo "synced + restarted + revalidated"

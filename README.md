@@ -23,6 +23,7 @@ config/
   custom.css        # 视觉定制
   custom.js         # 行为定制
 docker-compose.yml  # O1 上实际运行的编排（homepage + dockerproxy），挂载 ./config
+icons/              # 图标（自托管，容器挂到 /app/public/icons）
 deploy.sh           # 一键同步本仓库配置到 O1 并重启
 ```
 
@@ -53,6 +54,14 @@ REMOTE=local ./deploy.sh   # 已经在 O1 上时
 ```
 
 然后 `./deploy.sh`（或直接在 O1 上 `sudo git -C /opt/homepage/repo pull`）。
+
+## 图标
+
+- 所有图标都放在本仓库 `icons/`，容器挂载到 `/app/public/icons`，配置里写
+  `icon: /icons/xxx.png`。**不依赖 jsdelivr 等 CDN**（国内浏览器经常加载不出来）。
+- 其中 Komari/Hermes/OpenViking 用的是各服务自己的 favicon，其余取自
+  [dashboard-icons](https://github.com/homarr-labs/dashboard-icons)。
+- 新加图标：把文件丢进 `icons/`，配置里引用，然后跑 `./deploy.sh`（新增图标必须重建容器）。
 
 ## 二开约定
 

@@ -1,23 +1,23 @@
 # 书签：格式是 组 -> 条目 -> [ {abbr|icon, href, description} ]
 - 仓库:
     - nexusdock-nav:
-        - icon: github
+        - icon: /icons/github.png
           href: https://github.com/nonull-404/nexusdock-nav
           description: 本站配置与二开说明
 
     - arena-hero-matrix:
-        - icon: mdi-sword-cross
+        - icon: /icons/arena.png
           href: https://github.com/nonull-404/arena-hero-matrix
 
 - 控制台:
     - Bitwarden:
-        - icon: bitwarden
+        - icon: /icons/bitwarden.png
           href: https://vault.bitwarden.com
 
     - Cloudflare:
-        - icon: cloudflare
+        - icon: /icons/cloudflare.png
           href: https://dash.cloudflare.com
 
     - Oracle Cloud:
-        - icon: oracle
+        - icon: /icons/oracle.png
           href: https://cloud.oracle.com

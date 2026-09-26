@@ -1,5 +1,5 @@
 - logo:
-    icon: homepage
+    icon: /icons/homepage.png
 
 - search:
     provider: google
